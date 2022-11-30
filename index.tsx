@@ -1,5 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 import ReactPDF from '@react-pdf/renderer';
+
 import MyDocument from './MyDocument';
 import React from 'react'
 
@@ -9,10 +10,10 @@ app.get('/', (req: Request, res: Response) => {
   res.send(`<h2>Hello, Running on port: ${port}</h2>`);
 });
 
-
-app.get('/pdf', (req: Request, res: Response) => {
-    ReactPDF.render(<MyDocument />, `${__dirname}/example.pdf`);
-    res.send(`<h2>done</h2>`);
+app.get('/pdf', async (req: Request, res: Response) => {
+    const pdf  = await ReactPDF.renderToString(<MyDocument />);
+    res.set({ 'Content-Type': 'application/pdf', 'Content-Length': pdf.length });
+    res.send(pdf);
  });
   
 
