@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "tsc && node dist/index.js"
+    "dev": "ts-node-dev index.tsx"
   },
   "keywords": [],
   "author": "",
@@ -12,11 +12,12 @@
     "@react-pdf/renderer": "^3.0.1",
     "core-js": "^3.26.1",
     "express": "^4.18.2",
-    "react-pdf-table": "^1.0.0-alfa.3"
+    "react": "^17.0.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.14",
     "@types/react": "^18.0.25",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^4.8.4"
   }
 }

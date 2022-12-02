@@ -16,9 +16,8 @@ app.get('/pdf', async (req: Request, res: Response) => {
     res.send(pdf);
  });
   
-
-const port = 3001
-app.listen(3001, () => {
+const port = 4001
+app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
 })
 
